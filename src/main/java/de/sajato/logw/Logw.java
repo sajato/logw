@@ -25,8 +25,8 @@ public class Logw {
         Logw.log(Level.TRACE, messagePattern, parameter);
     }
 
-    public static void trace(String format, Supplier<Object>... arguments) {
-        Logw.log(Level.TRACE, format, arguments);
+    public static void trace(String messagePattern, Supplier<Object>... arguments) {
+        Logw.log(Level.TRACE, messagePattern, arguments);
     }
 
     public static void debug(String message) {
@@ -37,8 +37,8 @@ public class Logw {
         Logw.log(Level.DEBUG, messagePattern, parameter);
     }
 
-    public static void debug(String format, Supplier<Object>... arguments) {
-        Logw.log(Level.DEBUG, format, arguments);
+    public static void debug(String messagePattern, Supplier<Object>... arguments) {
+        Logw.log(Level.DEBUG, messagePattern, arguments);
     }
 
     public static void info(String message) {
@@ -49,8 +49,8 @@ public class Logw {
         Logw.log(Level.INFO, messagePattern, parameter);
     }
 
-    public static void info(String format, Supplier<Object>... arguments) {
-        Logw.log(Level.INFO, format, arguments);
+    public static void info(String messagePattern, Supplier<Object>... arguments) {
+        Logw.log(Level.INFO, messagePattern, arguments);
     }
 
     public static void warn(String message) {
@@ -61,8 +61,8 @@ public class Logw {
         Logw.log(Level.WARN, messagePattern, parameter);
     }
 
-    public static void warn(String format, Supplier<Object>... arguments) {
-        Logw.log(Level.WARN, format, arguments);
+    public static void warn(String messagePattern, Supplier<Object>... arguments) {
+        Logw.log(Level.WARN, messagePattern, arguments);
     }
 
     public static void error(String message) {
@@ -73,15 +73,29 @@ public class Logw {
         Logw.log(Level.ERROR, messagePattern, parameter);
     }
 
-    public static void error(String format, Supplier<Object>... arguments) {
-        Logw.log(Level.ERROR, format, arguments);
+    public static void error(String messagePattern, Supplier<Object>... arguments) {
+        Logw.log(Level.ERROR, messagePattern, arguments);
     }
 
     public static void log(Level level, String message) {
 
         String loggerName = NameDiscoverer.discoverer();
 
-        log(loggerName, level, message);
+        Logw.log(loggerName, level, message);
+    }
+
+    public static void log(Level level, String messagePattern, Object... parameter) {
+
+        String loggerName = NameDiscoverer.discoverer();
+
+        Logw.log(loggerName, level, messagePattern, parameter);
+    }
+
+    public static void log(Level level, String messagePattern, Supplier<Object>... arguments) {
+
+        String loggerName = NameDiscoverer.discoverer();
+
+        Logw.log(loggerName, level, messagePattern, arguments);
     }
 
     public static void log(String loggerName, Level level, String message) {
@@ -92,26 +106,12 @@ public class Logw {
         logger.log(loggerName, level, message);
     }
 
-    public static void log(Level level, String messagePattern, Object... parameter) {
-
-        String loggerName = NameDiscoverer.discoverer();
-
-        log(loggerName, level, messagePattern, parameter);
-    }
-
     public static void log(String loggerName, Level level, String messagePattern, Object... parameter){
 
         if(!logger.isLoggable(loggerName, level))
             return;
 
         logger.log(loggerName, level, MessageFormatter.format(messagePattern, parameter));
-    }
-
-    public static void log(Level level, String messagePattern, Supplier<Object>... arguments) {
-
-        String loggerName = NameDiscoverer.discoverer();
-
-        log(loggerName, level, messagePattern, arguments);
     }
 
     public static void log(String loggerName, Level level, String messagePattern, Supplier<Object>... arguments){
