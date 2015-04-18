@@ -11,7 +11,7 @@ public class JavaLoggingWrapper implements LoggingWrapper {
         return Logger.getLogger(name);
     }
 
-    Level convertLevel(final de.sajato.logw.Level level){
+    Level convertLevel(final de.sajato.logw.Level level) {
 
         // TODO Check log level allocation.
         switch (level){

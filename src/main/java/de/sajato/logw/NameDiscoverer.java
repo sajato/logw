@@ -28,11 +28,11 @@ public class NameDiscoverer {
         }
     }
 
-    public static String discoverer(){
+    public static String discoverer() {
         return discoverer(5);
     }
 
-    public static String discoverer(int deep){
+    public static String discoverer(int deep) {
         StackTraceElement stackTraceElement = getStackTraceElement(deep, false);
 
         return stackTraceElement.getClassName();
