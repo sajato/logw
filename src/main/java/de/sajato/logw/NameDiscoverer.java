@@ -24,9 +24,7 @@ public class NameDiscoverer {
     }
 
     public static String discoverer(int deep) {
-        StackTraceElement stackTraceElement = getStackTraceElement(deep, false);
-
-        return stackTraceElement.getClassName();
+      return getStackTraceElement(deep).getClassName();
     }
 
     // From tinylog (https://github.com/pmwmedia/tinylog/blob/master/tinylog/src/main/java/org/pmw/tinylog/Logger.java)
