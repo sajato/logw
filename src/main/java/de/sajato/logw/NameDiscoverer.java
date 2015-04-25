@@ -19,12 +19,12 @@ public class NameDiscoverer {
         }
     }
 
-    public static String discoverer(){
+    public static String discoverer() {
         return discoverer(5);
     }
 
-    public static String discoverer(int deep){
-        return getStackTraceElement(deep).getClassName();
+    public static String discoverer(int deep) {
+      return getStackTraceElement(deep).getClassName();
     }
 
     // From tinylog (https://github.com/pmwmedia/tinylog/blob/master/tinylog/src/main/java/org/pmw/tinylog/Logger.java)
