@@ -1,1 +1,1 @@
-include "logw"
+include "logw", "logw-slf4j"
