@@ -8,6 +8,7 @@ findbugs {
 }
 
 checkstyle {
+  configFile = new File(rootDir, "config/checkstyle/checkstyle.xml")
   ignoreFailures = true
   toolVersion = '6.5'
 }
