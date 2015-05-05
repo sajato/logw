@@ -16,3 +16,10 @@ Currently bindings for
 ## Maven
 
 ## Gradle
+
+Add jcenter repository to you ``build.gradle``
+```
+repositories {
+    jcenter()
+}
+```
