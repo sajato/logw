@@ -4,7 +4,7 @@
 
 ``logw`` provides a static log method and makes log guards unnecessary, so your code
 is easier to read. ``logw`` provides bindings for different logging implementations.
-Currently bindings for
+Currently bindings for following log implementations are available:
 
 * [Standard Java Logging](http://docs.oracle.com/javase/6/docs/api/java/util/logging/package-summary.html)
 * [slf4j](http://www.slf4j.org/)
