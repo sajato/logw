@@ -11,6 +11,20 @@ Currently bindings for following log implementations are available:
 
 # Usage
 
+```java
+// Log a simple message to warning, if warning is enabled
+Logw.warn("This message is only logged, if warning is enabled");
+
+// Log a simple message with parameters
+Logw.info("This message is logged to {}", "INFO");
+
+// If you have a complex parameter or need to compute something, us lambdas.
+// The lambda expression is only evaluated iff the message would be logged
+Logw.trace("This message is logged to {}", () -> reallyComplexComputation());
+```
+
+# Get it
+
 ``logw`` is available at [jcenter](https://bintray.com/bintray/jcenter) maven repository.
 
 ## Maven
