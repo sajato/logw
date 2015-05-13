@@ -38,6 +38,22 @@ repositories {
 }
 ```
 
+Add ``logw`` to your dependencies
+
+```
+dependencies {
+    compile 'de.sajato:logw:VERSION'
+}
+```
+
+If you're using ``slf4j`` add the appropriate bindings:
+
+```
+dependencies {
+    compile 'de.sajato:logw-slf4j:VERSION'
+}
+```
+
 # Versioning
 
 ``logw`` will be maintained under the [Semantic Versioning](http://semver.org) guidelines as much as possible.
