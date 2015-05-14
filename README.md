@@ -27,6 +27,10 @@ Logw.trace("This message is logged to {}", () -> reallyComplexComputation());
 
 ``logw`` is available at [jcenter](https://bintray.com/bintray/jcenter) maven repository.
 
+## Prerequisites
+
+Your project must target ``java 8``. Older versions are *not* supported!
+
 ## Maven
 
 ## Gradle
