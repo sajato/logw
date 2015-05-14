@@ -35,7 +35,7 @@ Your project must target ``java 8``. Older versions are *not* supported!
 
 Add jitpack repository to your ``pom.xml``
 
-```
+```xml
 <repository>
     <id>jitpack.io</id>
     <url>https://jitpack.io</url>
@@ -44,7 +44,7 @@ Add jitpack repository to your ``pom.xml``
 
 Add ``logw`` to your dependencies
 
-```
+```xml
 <dependency>
     <groupId>com.github.sajato.logw</groupId>
     <artifactId>logw</artifactId>
@@ -55,7 +55,7 @@ Add ``logw`` to your dependencies
 If you're using ``slf4j`` add the appropriate bindings in addition:
 
 ```
-<dependency>
+<dependency>xml
     <groupId>com.github.sajato.logw</groupId>
     <artifactId>logw-slf4j</artifactId>
     <version>VERSION</version>
@@ -65,7 +65,8 @@ If you're using ``slf4j`` add the appropriate bindings in addition:
 ## Gradle
 
 Add jitpack repository to you ``build.gradle``
-```
+
+```gradle
 repositories {
     maven {
         url "https://jitpack.io"
@@ -75,7 +76,7 @@ repositories {
 
 Add ``logw`` to your dependencies
 
-```
+```gradle
 dependencies {
     compile com.github.sajato.logw:logw:VERSION
 }
@@ -83,7 +84,7 @@ dependencies {
 
 If you're using ``slf4j`` add the appropriate bindings in addition:
 
-```
+```gradle
 dependencies {
     compile com.github.sajato.logw:logw-slf4j:VERSION
 }
