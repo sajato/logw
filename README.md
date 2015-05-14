@@ -54,8 +54,8 @@ Add ``logw`` to your dependencies
 
 If you're using ``slf4j`` add the appropriate bindings in addition:
 
-```
-<dependency>xml
+```xml
+<dependency>
     <groupId>com.github.sajato.logw</groupId>
     <artifactId>logw-slf4j</artifactId>
     <version>VERSION</version>
