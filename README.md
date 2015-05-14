@@ -1,5 +1,6 @@
 # logw
 [![Build Status](https://travis-ci.org/sajato/logw.svg)](https://travis-ci.org/sajato/logw)
+[![Release](https://img.shields.io/github/release/sajato/logw.svg?label=maven)](https://github.com/sajato/logw)
 ![GitHub license](https://img.shields.io/github/license/sajato/logw.svg?style=flat)
 
 ``logw`` provides a static log method and makes log guards unnecessary, so your code
