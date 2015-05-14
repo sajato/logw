@@ -40,7 +40,7 @@ Add jitpack repository to your ``pom.xml``
     <id>jitpack.io</id>
     <url>https://jitpack.io</url>
 </repository>
-``
+```
 
 Add ``logw`` to your dependencies
 
