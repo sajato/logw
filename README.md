@@ -1,9 +1,12 @@
 # logw
+
 [![Build Status](https://travis-ci.org/sajato/logw.svg)](https://travis-ci.org/sajato/logw)
 [![Release](https://img.shields.io/github/release/sajato/logw.svg?label=maven)](https://github.com/sajato/logw)
 ![GitHub license](https://img.shields.io/github/license/sajato/logw.svg?style=flat)
 
-``logw`` provides a static log method and makes log guards unnecessary, so your code
+A simple wrapper for logging. It provides static log methods and makes log guards unnecessary.
+
+``logw`` provides a static log method that encapsules log guards, so your code
 is easier to read. ``logw`` provides bindings for different logging implementations.
 Currently bindings for following log implementations are available:
 
@@ -30,7 +33,7 @@ Logw.trace("This message is logged to {}", () -> reallyComplexComputation());
 
 ## Prerequisites
 
-Your project must target ``java 8``. Older versions are *not* supported!
+Your project must target ``java 8``. **Older versions are *not* supported!**
 
 ## Maven
 
