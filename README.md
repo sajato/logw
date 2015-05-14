@@ -25,7 +25,7 @@ Logw.trace("This message is logged to {}", () -> reallyComplexComputation());
 
 # Get it
 
-``logw`` is available at [jcenter](https://bintray.com/bintray/jcenter) maven repository.
+``logw`` is available at [jitpack](https://jitpack.io/) maven repository.
 
 ## Prerequisites
 
@@ -33,12 +33,43 @@ Your project must target ``java 8``. Older versions are *not* supported!
 
 ## Maven
 
+Add jitpack repository to your ``pom.xml``
+
+```
+<repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+</repository>
+``
+
+Add ``logw`` to your dependencies
+
+```
+<dependency>
+    <groupId>com.github.sajato.logw</groupId>
+    <artifactId>logw</artifactId>
+    <version>VERSION</version>
+</dependency>
+```
+
+If you're using ``slf4j`` add the appropriate bindings in addition:
+
+```
+<dependency>
+    <groupId>com.github.sajato.logw</groupId>
+    <artifactId>logw-slf4j</artifactId>
+    <version>VERSION</version>
+</dependency>
+```
+
 ## Gradle
 
-Add jcenter repository to you ``build.gradle``
+Add jitpack repository to you ``build.gradle``
 ```
 repositories {
-    jcenter()
+    maven {
+        url "https://jitpack.io"
+    }
 }
 ```
 
@@ -46,15 +77,15 @@ Add ``logw`` to your dependencies
 
 ```
 dependencies {
-    compile 'de.sajato:logw:VERSION'
+    compile com.github.sajato.logw:logw:VERSION
 }
 ```
 
-If you're using ``slf4j`` add the appropriate bindings:
+If you're using ``slf4j`` add the appropriate bindings in addition:
 
 ```
 dependencies {
-    compile 'de.sajato:logw-slf4j:VERSION'
+    compile com.github.sajato.logw:logw-slf4j:VERSION
 }
 ```
 
