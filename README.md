@@ -22,8 +22,8 @@ Logw.warn("This message is only logged, if warning is enabled");
 // Log a simple message with parameters
 Logw.info("This message is logged to {}", "INFO");
 
-// If you have a complex parameter or need to compute something, us lambdas.
-// The lambda expression is only evaluated iff the message would be logged
+// If you have a complex parameter or need to compute something, use lambdas.
+// The lambda expression is only evaluated iff the message will be logged
 Logw.trace("This message is logged to {}", () -> reallyComplexComputation());
 ```
 
@@ -68,7 +68,7 @@ If you're using ``slf4j`` add the appropriate bindings in addition:
 
 ## Gradle
 
-Add jitpack repository to you ``build.gradle``
+Add jitpack repository to your ``build.gradle``
 
 ```gradle
 repositories {
