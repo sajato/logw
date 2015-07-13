@@ -1,5 +1,7 @@
 # logw
 
+![logwlogo][logo]
+
 [![Build Status](https://travis-ci.org/sajato/logw.svg)](https://travis-ci.org/sajato/logw)
 [![Release](https://img.shields.io/github/release/sajato/logw.svg?label=maven)](https://github.com/sajato/logw)
 ![GitHub license](https://img.shields.io/github/license/sajato/logw.svg?style=flat)
@@ -107,3 +109,9 @@ And constructed with the following guidelines:
 * Breaking backward compatibility bumps the major
 * New additions without breaking backward compatibility bumps the minor
 * Bug fixes and misc changes bump the patch
+
+# Special Thanks
+
+* Special thanks to [Andy](http://andreasherting.de/) who created the great logw logo.
+
+[logo]: https://raw.githubusercontent.com/sajato/logw/develop/logw-logo.png
