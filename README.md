@@ -112,6 +112,6 @@ And constructed with the following guidelines:
 
 # Special Thanks
 
-* To Andy who created the great logw logo.
+* Special thanks to [Andy](http://andreasherting.de/) who created the great logw logo.
 
 [logo]: https://raw.githubusercontent.com/sajato/logw/develop/logw-logo.png
