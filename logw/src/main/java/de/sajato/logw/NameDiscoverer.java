@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 
 public class NameDiscoverer {
 
-    private static Method stackTraceMethod;
+    static Method stackTraceMethod;
 
     static {
         try {
@@ -29,7 +29,7 @@ public class NameDiscoverer {
 
     // From tinylog (https://github.com/pmwmedia/tinylog/blob/master/tinylog/src/main/java/org/pmw/tinylog/Logger.java)
     @SuppressWarnings("all")
-    private static StackTraceElement getStackTraceElement(final int deep) {
+    static StackTraceElement getStackTraceElement(final int deep) {
         if (stackTraceMethod != null) {
             try {
                 return (StackTraceElement) stackTraceMethod.invoke(new Throwable(), deep);
