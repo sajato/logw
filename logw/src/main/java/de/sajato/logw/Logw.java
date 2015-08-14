@@ -2,6 +2,7 @@ package de.sajato.logw;
 
 import de.sajato.logw.javaLogging.JavaLoggingWrapper;
 
+import java.util.ServiceLoader;
 import java.util.function.Supplier;
 
 public class Logw {
@@ -9,8 +10,19 @@ public class Logw {
     static LoggingWrapper logger;
 
     static {
-        // TODO Set default inner logger.
-        setInnerLogger(new JavaLoggingWrapper());
+
+        ServiceLoader<LoggingWrapper> serviceLoader = ServiceLoader.load(LoggingWrapper.class);
+
+        LoggingWrapper innerLogger = null;
+
+        if(serviceLoader.iterator().hasNext()) {
+            innerLogger = serviceLoader.iterator().next();
+        } else {
+            innerLogger = new JavaLoggingWrapper();
+        }
+
+        setInnerLogger(innerLogger);
+        Logw.info("Logw use log wrapper " + innerLogger.getClass().getName());
     }
 
     static void setInnerLogger(LoggingWrapper logger) {
