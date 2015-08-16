@@ -1,4 +1,3 @@
-include "logw"
-include "logw-slf4j"
-include "benchmark"
-
+include 'logw'
+include 'logw-slf4j', 'logw-log4j2'
+include 'benchmark'

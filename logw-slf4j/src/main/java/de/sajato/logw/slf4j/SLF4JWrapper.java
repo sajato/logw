@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public class SLF4JLoggingWrapper implements LoggingWrapper {
+public class SLF4JWrapper implements LoggingWrapper {
 
     Logger getLogger(String loggerName){
         return LoggerFactory.getLogger(loggerName);

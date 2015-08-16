@@ -1,0 +1,9 @@
+
+jar {
+    manifest.attributes 'Implementation-Title': 'logw-log4j2'
+}
+
+dependencies {
+    compile project(':logw')
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.3'
+}
