@@ -10,7 +10,7 @@ sourceSets {
 }
 
 dependencies {
-    compile project(':logw')
+    compile project(':logw-core')
     compile project(':logw-slf4j')
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.12'
     compile group: 'org.openjdk.jmh', name: 'jmh-core', version: '1.0'
