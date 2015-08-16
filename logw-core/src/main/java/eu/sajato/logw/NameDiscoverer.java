@@ -2,7 +2,7 @@ package eu.sajato.logw;
 
 import java.lang.reflect.Method;
 
-public class NameDiscoverer {
+class NameDiscoverer {
 
     static Method stackTraceMethod;
 
@@ -19,11 +19,11 @@ public class NameDiscoverer {
         }
     }
 
-    public static String discoverer() {
+    static String discoverer() {
         return discoverer(5);
     }
 
-    public static String discoverer(int deep) {
+    static String discoverer(int deep) {
       return getStackTraceElement(deep).getClassName();
     }
 
