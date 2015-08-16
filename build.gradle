@@ -3,7 +3,7 @@ subprojects {
     apply plugin: 'java'
     apply from: '../codeQuality.gradle'
 
-    group = 'de.sajato'
+    group = 'de.sajato.logw'
 
     version = '0.2.0-SNAPSHOT'
 
