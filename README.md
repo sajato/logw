@@ -12,8 +12,9 @@ A simple wrapper for logging. It provides static log methods and makes log guard
 is easier to read. ``logw`` provides bindings for different logging implementations.
 Currently bindings for following log implementations are available:
 
-* [Standard Java Logging](http://docs.oracle.com/javase/6/docs/api/java/util/logging/package-summary.html)
-* [slf4j](http://www.slf4j.org/)
+* [Standard Java Util Logging](http://docs.oracle.com/javase/6/docs/api/java/util/logging/package-summary.html)
+* [Simple Logging Facade for Java (SLF4J)](http://www.slf4j.org/)
+* [Apache Log4j 2](http://logging.apache.org/log4j/2.x/)
 
 # Usage
 
@@ -48,12 +49,12 @@ Add jitpack repository to your ``pom.xml``
 </repository>
 ```
 
-Add ``logw`` to your dependencies
+Add ``logw-core`` to your dependencies
 
 ```xml
 <dependency>
     <groupId>com.github.sajato.logw</groupId>
-    <artifactId>logw</artifactId>
+    <artifactId>logw-core</artifactId>
     <version>VERSION</version>
 </dependency>
 ```
@@ -64,6 +65,16 @@ If you're using ``slf4j`` add the appropriate bindings in addition:
 <dependency>
     <groupId>com.github.sajato.logw</groupId>
     <artifactId>logw-slf4j</artifactId>
+    <version>VERSION</version>
+</dependency>
+```
+
+If you're using ``log4j2`` add the appropriate bindings in addition:
+
+```xml
+<dependency>
+    <groupId>com.github.sajato.logw</groupId>
+    <artifactId>logw-log4j2</artifactId>
     <version>VERSION</version>
 </dependency>
 ```
@@ -80,11 +91,11 @@ repositories {
 }
 ```
 
-Add ``logw`` to your dependencies
+Add ``logw-core`` to your dependencies
 
 ```gradle
 dependencies {
-    compile com.github.sajato.logw:logw:VERSION
+    compile com.github.sajato.logw:logw-core:VERSION
 }
 ```
 
@@ -93,6 +104,14 @@ If you're using ``slf4j`` add the appropriate bindings in addition:
 ```gradle
 dependencies {
     compile com.github.sajato.logw:logw-slf4j:VERSION
+}
+```
+
+If you're using ``log4j2`` add the appropriate bindings in addition:
+
+```gradle
+dependencies {
+    compile com.github.sajato.logw:logw-log4j2:VERSION
 }
 ```
 
