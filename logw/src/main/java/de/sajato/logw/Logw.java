@@ -13,7 +13,7 @@ public class Logw {
 
         ServiceLoader<LoggingWrapper> serviceLoader = ServiceLoader.load(LoggingWrapper.class);
 
-        LoggingWrapper innerLogger = null;
+        LoggingWrapper innerLogger;
 
         if(serviceLoader.iterator().hasNext()) {
             innerLogger = serviceLoader.iterator().next();
