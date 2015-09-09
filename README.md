@@ -19,6 +19,10 @@ Currently bindings for following log implementations are available:
 # Usage
 
 ```java
+import de.sajato.logw.Logw;
+
+[...]
+
 // Log a simple message to warning, if warning is enabled
 Logw.warn("This message is only logged, if warning is enabled");
 
