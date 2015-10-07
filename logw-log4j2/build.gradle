@@ -1,4 +1,3 @@
-
 jar {
     manifest.attributes 'Implementation-Title': 'logw-log4j2'
 }
@@ -7,3 +6,69 @@ dependencies {
     compile project(':logw-core')
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.3'
 }
+
+uploadArchives {
+    repositories.mavenDeployer {
+//        repository(url: "file://localhost/tmp/myRepo/")
+//        pom.version = '1.0Maven'
+//        pom.artifactId = 'logw-log4j2'
+//        pom.packaging = 'jar'
+//        pom.name = 'logw-log4j2'
+        pom.project {
+            description 'A simple wrapper for logging. This version wraps the apache log4j2 logger. It provides static log methods and make log guards unnecessary.'
+        }
+    }
+}
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            description 'A simple wrapper for logging. This version wraps the apache log4j2 logger. It provides static log methods and make log guards unnecessary.'
+        }
+    }
+}
+
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//
+//            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+//
+//            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+//                authentication(userName: ossrhUsername, password: ossrhPassword)
+//            }
+//
+//            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+//                authentication(userName: ossrhUsername, password: ossrhPassword)
+//            }
+//
+//            pom.project {
+//                name 'logw-log4j2'
+//                packaging 'jar'
+//                description 'A simple wrapper for logging. It provides static log methods and make log guards unnecessary.'
+//                url 'https://github.com/sajato/logw'
+//
+//                scm {
+//                    connection 'scm:git:git@github.com:sajato/logw.git'
+//                    developerConnection 'scm:git:git@github.com:sajato/logw.git'
+//                    url 'git@github.com:sajato/logw.git'
+//                }
+//
+//                licenses {
+//                    license {
+//                        name 'The Apache License, Version 2.0'
+//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                    }
+//                }
+//
+//                developers {
+//                    developer {
+//                        id 'sajato'
+//                        name 'Sascha Rinne'
+//                        email 'sascha@jugowl.org'
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}

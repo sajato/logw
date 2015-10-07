@@ -1,11 +1,11 @@
 subprojects {
-    apply plugin: 'maven'
+
     apply plugin: 'java'
     apply from: '../codeQuality.gradle'
 
     group = 'eu.sajato.logw'
-
     version = '0.2.0-SNAPSHOT'
+//    version = '0.2.0'
 
     sourceCompatibility = 1.8
 
@@ -23,6 +23,210 @@ subprojects {
         manifest.attributes 'Implementation-Vendor': 'https://github.com/sajato/logw'
         manifest.attributes 'Implementation-Version': version
     }
+}
+
+configure(subprojects - project(':benchmark')) {
+
+    apply plugin: 'maven'
+    apply plugin: 'signing'
+
+//    archiveTask.extension = org.gradle.api.tasks.bundling.Jar
+
+    task javadocJar(type: Jar) {
+        classifier = 'javadoc'
+        from javadoc
+    }
+
+    task sourcesJar(type: Jar) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+
+    artifacts {
+        archives javadocJar, sourcesJar
+    }
+
+    signing {
+        sign configurations.archives
+    }
+
+    uploadArchives {
+        repositories.mavenDeployer {
+
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+        }
+    }
+
+    install {
+        repositories.mavenInstaller {
+            pom.project {
+
+                packaging 'jar'
+//                description 'A simple wrapper for logging. It provides static log methods and make log guards unnecessary.'
+                url 'https://github.com/sajato/logw'
+
+                scm {
+                    connection 'scm:git:git@github.com:sajato/logw.git'
+                    developerConnection 'scm:git:git@github.com:sajato/logw.git'
+                    url 'git@github.com:sajato/logw.git'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+//                developers {
+//                    developer {
+//                        id 'sajato'
+//                        name 'Sascha Rinne'
+//                        email 'sascha@jugowl.org'
+//                    }
+//                }
+            }
+        }
+    }
+
+//    uploadArchives {
+////        signing {
+////            sign configurations.archives
+////        }
+////        beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+//        beforeDeployment { signing.signPom(it) }
+//
+//        repositories.mavenDeployer {
+//            pom.project {
+//                name 'logw'
+//                packaging 'jar'
+//                description 'A simple wrapper for logging. It provides static log methods and make log guards unnecessary.'
+//                url 'https://github.com/sajato/logw'
+//
+//                scm {
+//                    connection 'scm:git:git@github.com:sajato/logw.git'
+//                    developerConnection 'scm:git:git@github.com:sajato/logw.git'
+//                    url 'git@github.com:sajato/logw.git'
+//                }
+//
+//                licenses {
+//                    license {
+//                        name 'The Apache License, Version 2.0'
+//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                    }
+//                }
+//
+//                developers {
+//                    developer {
+//                        id 'sajato'
+//                        name 'Sascha Rinne'
+//                        email 'sascha@jugowl.org'
+//                    }
+//                }
+//            }
+//        }
+//    }
+
+//    install {
+//        signing {
+//            sign configurations.archives
+//        }
+//
+////        beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+////        beforeInstall { MavenDeployment deployment -> signing.signPom(deployment) }
+//
+//
+//        repositories.mavenInstaller {
+//            pom.project {
+//                name 'logw'
+//                packaging 'jar'
+//                description 'A simple wrapper for logging. It provides static log methods and make log guards unnecessary.'
+//                url 'https://github.com/sajato/logw'
+//
+//                scm {
+//                    connection 'scm:git:git@github.com:sajato/logw.git'
+//                    developerConnection 'scm:git:git@github.com:sajato/logw.git'
+//                    url 'git@github.com:sajato/logw.git'
+//                }
+//
+//                issueManagement {
+//                    system 'github'
+//                    url "https://github.com/sajato/logw/issues"
+//                }
+//
+//                licenses {
+//                    license {
+//                        name 'The Apache License, Version 2.0'
+//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                    }
+//                }
+//
+//                developers {
+//                    developer {
+//                        id 'sajato'
+//                        name 'Sascha Rinne'
+//                        email 'sascha@jugowl.org'
+//                    }
+//                }
+//            }
+//        }
+//    }
+
+//    uploadArchives {
+//        repositories {
+//            mavenDeployer {
+////                addFilter('logw-core') {artifact, file ->
+////                    artifact.name == 'logw-core'
+////                }
+//
+//                beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+//
+//                repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+//                    authentication(userName: ossrhUsername, password: ossrhPassword)
+//                }
+//
+//                snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+//                    authentication(userName: ossrhUsername, password: ossrhPassword)
+//                }
+//
+//                pom.project {
+//                    name 'logw'
+//                    packaging 'jar'
+//                    description 'A simple wrapper for logging. It provides static log methods and make log guards unnecessary.'
+//                    url 'https://github.com/sajato/logw'
+//
+//                    scm {
+//                        connection 'scm:git:git@github.com:sajato/logw.git'
+//                        developerConnection 'scm:git:git@github.com:sajato/logw.git'
+//                        url 'git@github.com:sajato/logw.git'
+//                    }
+//
+//                    licenses {
+//                        license {
+//                            name 'The Apache License, Version 2.0'
+//                            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                        }
+//                    }
+//
+//                    developers {
+//                        developer {
+//                            id 'sajato'
+//                            name 'Sascha Rinne'
+//                            email 'sascha@jugowl.org'
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 }
 
 task wrapper(type: Wrapper) {
