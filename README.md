@@ -3,8 +3,8 @@
 ![logwlogo][logo]
 
 [![Build Status](https://travis-ci.org/sajato/logw.svg)](https://travis-ci.org/sajato/logw)
-[![Release](https://img.shields.io/github/release/sajato/logw.svg?label=maven)](https://github.com/sajato/logw)
-![GitHub license](https://img.shields.io/github/license/sajato/logw.svg?style=flat)
+[![Release](https://img.shields.io/badge/Release-0.1.0-orange.svg)](https://github.com/sajato/logw/releases)
+[![GitHub license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/sajato/logw/blob/develop/LICENSE)
 
 A simple wrapper for logging. It provides static log methods and makes log guards unnecessary.
 
