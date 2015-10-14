@@ -32,6 +32,10 @@ configure(subprojects - project(':benchmark')) {
 
 //    archiveTask.extension = org.gradle.api.tasks.bundling.Jar
 
+    jar {
+        manifest.attributes 'Implementation-Title': project.name
+    }
+    
     task javadocJar(type: Jar) {
         classifier = 'javadoc'
         from javadoc
