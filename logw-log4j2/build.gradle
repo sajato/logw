@@ -1,6 +1,3 @@
-jar {
-    manifest.attributes 'Implementation-Title': 'logw-log4j2'
-}
 
 dependencies {
     compile project(':logw-core')
