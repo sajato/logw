@@ -36,7 +36,7 @@ Logw.trace("This message is logged to {}", () -> reallyComplexComputation());
 
 # Get it
 
-``logw`` is available at [jitpack](https://jitpack.io/) maven repository.
+``logw`` is available at [jitpack](https://jitpack.io/#sajato/logw) maven repository.
 
 ## Prerequisites
 
