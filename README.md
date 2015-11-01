@@ -6,7 +6,9 @@
 [![Release](https://img.shields.io/github/release/sajato/logw.svg?label=maven)](https://github.com/sajato/logw)
 ![GitHub license](https://img.shields.io/github/license/sajato/logw.svg?style=flat)
 
-A simple wrapper for logging. It provides static log methods and makes log guards unnecessary.
+A wrapper for your logging framework that makes logging easier 
+by providing static log methods and makes log guards unnecessary.
+It does not touch the configuration of your logging framework.
 
 ``logw`` provides a static log method that encapsules log guards, so your code
 is easier to read. ``logw`` provides bindings for different logging implementations.

@@ -3,3 +3,5 @@ dependencies {
     // TODO: Slf4j is needed for the MessageFormatter, remove this dependency.
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.12'
 }
+
+description 'A wrapper for your logging framework that makes logging easier by providing static log methods and encapsules log guards. This version use the Standard Java Util Logging.'
