@@ -2,6 +2,7 @@ package eu.sajato.logw;
 
 import eu.sajato.logw.javaLogging.JavaLoggingWrapper;
 
+import java.util.Iterator;
 import java.util.ServiceLoader;
 import java.util.function.Supplier;
 
@@ -13,16 +14,16 @@ public class Logw {
 
         ServiceLoader<LoggingWrapper> serviceLoader = ServiceLoader.load(LoggingWrapper.class);
 
-        LoggingWrapper innerLogger;
-
-        if(serviceLoader.iterator().hasNext()) {
-            innerLogger = serviceLoader.iterator().next();
+        Iterator<LoggingWrapper> ite = serviceLoader.iterator();
+        if(ite.hasNext()) {
+            setInnerLogger(ite.next());
+            if(ite.hasNext())
+                Logw.warn("More then one LoggingWrapper loaded with ServiceLoader. Check if multiple logw bindings are in classpath. Anyway, we use the first one for now.");
         } else {
-            innerLogger = new JavaLoggingWrapper();
+            setInnerLogger(new JavaLoggingWrapper());
         }
 
-        setInnerLogger(innerLogger);
-        Logw.info("Logw use log wrapper " + innerLogger.getClass().getName());
+        Logw.info("Logw use log wrapper " + logger.getClass().getName());
     }
 
     static void setInnerLogger(LoggingWrapper logger) {
