@@ -30,6 +30,9 @@ public class Logw {
         Logw.logger  = logger;
     }
 
+    // Constructor not needed.
+    private Logw(){}
+
     public static void trace(String message) {
         Logw.log(Level.TRACE, message);
     }
