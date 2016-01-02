@@ -32,7 +32,7 @@ public class LogwTest {
     public void warnParameterTest(){
 
         new NonStrictExpectations(){{
-            loggingWrapper.log(anyString, Level.WARN, "Hello Test");
+            loggingWrapper.log(anyString, Level.WARN, "Hello World");
             times = 1;
 
             loggingWrapper.isLoggable(anyString, Level.WARN);
@@ -40,7 +40,9 @@ public class LogwTest {
         }};
 
         Logw.setInnerLogger(loggingWrapper);
-        Logw.warn("Hello {}", "Test");
+
+        Object[] arguments = {"World"};
+        Logw.warn("Hello {}", arguments);
     }
 
     @Test
