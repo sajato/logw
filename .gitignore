@@ -22,4 +22,5 @@ hs_err_pid*
 .gradle
 build
 out
+gradle.properties
 gradle-app.setting
