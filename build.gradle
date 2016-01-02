@@ -124,6 +124,11 @@ configure(subprojects - project(':benchmark')) {
     }
 }
 
+task printProps << {
+    println ossrhPassword
+    println ossrhUsername
+}
+
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.8'
+    gradleVersion = '2.10'
 }
