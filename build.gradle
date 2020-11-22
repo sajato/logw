@@ -125,5 +125,5 @@ configure(subprojects - project(':benchmark')) {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.8'
+    gradleVersion = '4.0'
 }
