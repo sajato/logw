@@ -1,0 +1,6 @@
+
+dependencies {
+    compile project(':logw-core')
+    compile project(':logw-slf4j')
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
+}

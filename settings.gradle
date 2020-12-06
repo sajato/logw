@@ -1,3 +1,4 @@
 include 'logw-core'
 include 'logw-slf4j', 'logw-log4j2'
 include 'benchmark'
+include 'demo'
