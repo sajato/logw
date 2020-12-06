@@ -9,23 +9,14 @@ import java.util.concurrent.TimeUnit;
 @State(Scope.Benchmark)
 @Fork(1)
 
-//// Setup for Average Time Benchmark
-@BenchmarkMode(Mode.AverageTime)
-@Warmup(iterations = 10, time = 1, timeUnit = TimeUnit.SECONDS)
-@Measurement(iterations = 20, time = 1, timeUnit = TimeUnit.SECONDS)
-@OutputTimeUnit(TimeUnit.NANOSECONDS)
-
-//// Setup for Sample Time Benchmark
-//@BenchmarkMode(Mode.SampleTime)
+//// Setup for Average Time Benchmark (quick run)
+//@BenchmarkMode(Mode.AverageTime)
 //@Warmup(iterations = 10, time = 1, timeUnit = TimeUnit.SECONDS)
 //@Measurement(iterations = 20, time = 1, timeUnit = TimeUnit.SECONDS)
 //@OutputTimeUnit(TimeUnit.NANOSECONDS)
 
-//// Setup for Throughput Benchmark
-//@BenchmarkMode(Mode.Throughput)
-//@Warmup(iterations = 10)
-//@Measurement(iterations = 20)
-//@OutputTimeUnit(TimeUnit.MILLISECONDS)
+//// Setup for Average Time Benchmark
+@BenchmarkMode(Mode.AverageTime)
 
 public class LogwBenchmark {
 
