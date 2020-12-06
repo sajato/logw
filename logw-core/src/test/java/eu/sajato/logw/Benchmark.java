@@ -1,5 +1,6 @@
 package eu.sajato.logw;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.logging.*;
@@ -8,6 +9,7 @@ import java.util.logging.Level;
 public class Benchmark {
 
     @Test
+    @Ignore
     public void run500Warnings(){
 
         long start = System.nanoTime();
