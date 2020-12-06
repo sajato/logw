@@ -16,11 +16,11 @@ import java.util.function.Supplier;
  * When no binding is found the java util logging api from the JDK is used.
  * <p>
  * You can use the general log methods named {@code log} or the methods named
- * by the associated log level. All methods have six variations, one with only the
- * simple message string ({@link #log(Level, String)}, {@link #log(String, Level, String)}),
- * one with a message pattern and arguments for the placeholders ({@link #log(Level, String, Object...)}, {@link #log(String, Level, String, Object...)})
- * and one with a massage pattern and lambda expressions for the placeholders ({@link #log(Level, String, Supplier...)}, {@link #log(String, Level, String, Supplier...)}),
- * each of this tree with logger name and without.
+ * by the associated log level. All methods have three variations, one with only the
+ * simple message string ({@link #log(Level, String)}), one with a message pattern
+ * and arguments for the placeholders ({@link #log(Level, String, Object...)})
+ * and one with a massage pattern and lambda expressions for the placeholders
+ * ({@link #log(Level, String, Supplier...)}).
  * <p>
  * When the evaluation of arguments is expensive pay special attention to
  * the methods with lambda expressions. You can use it to evaluate expressions
@@ -81,30 +81,6 @@ public class Logw {
     }
 
     /**
-     * <p>Logs a simple log message with {@link Level#TRACE} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String) Logw.log(loggerName, Level.TRACE, message)}
-     */
-    public static void trace(String loggerName, String message) {
-        Logw.log(loggerName, Level.TRACE, message);
-    }
-
-    /**
-     * <p>Logs a message, compiled from message pattern and the arguments, with {@link Level#TRACE} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String, Object...) Logw.log(loggerName, Level.TRACE, messagePattern, arguments)}
-     */
-    public static void trace(String loggerName, String messagePattern, Object... arguments) {
-        Logw.log(loggerName, Level.TRACE, messagePattern, arguments);
-    }
-
-    /**
-     * <p>Logs a message, compiled from message pattern and values from the evaluated argument suppliers, with {@link Level#TRACE} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String, Supplier...) Logw.log(loggerName, Level.TRACE, messagePattern, argumentSuppliers)}
-     */
-    public static void trace(String loggerName, String messagePattern, Supplier<Object>... argumentSuppliers) {
-        Logw.log(loggerName, Level.TRACE, messagePattern, argumentSuppliers);
-    }
-
-    /**
      * <p>Logs a simple log message with {@link Level#DEBUG}.</p>
      * Same as: {@link #log(Level, String) Logw.log(Level.DEBUG, message)}
      */
@@ -126,30 +102,6 @@ public class Logw {
      */
     public static void debug(String messagePattern, Supplier<Object>... argumentSuppliers) {
         Logw.log(Level.DEBUG, messagePattern, argumentSuppliers);
-    }
-
-    /**
-     * <p>Logs a simple log message with {@link Level#DEBUG} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String) Logw.log(loggerName, Level.DEBUG, message)}
-     */
-    public static void debug(String loggerName, String message) {
-        Logw.log(loggerName, Level.DEBUG, message);
-    }
-
-    /**
-     * <p>Logs a message, compiled from message pattern and the arguments, with {@link Level#DEBUG} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String, Object...) Logw.log(loggerName, Level.DEBUG, messagePattern, arguments)}
-     */
-    public static void debug(String loggerName, String messagePattern, Object... arguments) {
-        Logw.log(loggerName, Level.DEBUG, messagePattern, arguments);
-    }
-
-    /**
-     * <p>Logs a message, compiled from message pattern and values from the evaluated argument suppliers, with {@link Level#DEBUG} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String, Supplier...) Logw.log(loggerName, Level.DEBUG, messagePattern, argumentSuppliers)}
-     */
-    public static void debug(String loggerName, String messagePattern, Supplier<Object>... argumentSuppliers) {
-        Logw.log(loggerName, Level.DEBUG, messagePattern, argumentSuppliers);
     }
 
     /**
@@ -177,30 +129,6 @@ public class Logw {
     }
 
     /**
-     * <p>Logs a simple log message with {@link Level#INFO} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String) Logw.log(loggerName, Level.INFO, message)}
-     */
-    public static void info(String loggerName, String message) {
-        Logw.log(loggerName, Level.INFO, message);
-    }
-
-    /**
-     * <p>Logs a message, compiled from message pattern and the arguments, with {@link Level#INFO} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String, Object...) Logw.log(loggerName, Level.INFO, messagePattern, arguments)}
-     */
-    public static void info(String loggerName, String messagePattern, Object... arguments) {
-        Logw.log(loggerName, Level.INFO, messagePattern, arguments);
-    }
-
-    /**
-     * <p>Logs a message, compiled from message pattern and values from the evaluated argument suppliers, with {@link Level#INFO} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String, Supplier...) Logw.log(loggerName, Level.INFO, messagePattern, argumentSuppliers)}
-     */
-    public static void info(String loggerName, String messagePattern, Supplier<Object>... argumentSuppliers) {
-        Logw.log(loggerName, Level.INFO, messagePattern, argumentSuppliers);
-    }
-
-    /**
      * <p>Logs a simple log message with {@link Level#WARN}.</p>
      * Same as: {@link #log(Level, String) Logw.log(Level.WARN, message)}
      */
@@ -225,37 +153,12 @@ public class Logw {
     }
 
     /**
-     * <p>Logs a simple log message with {@link Level#WARN} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String) Logw.log(loggerName, Level.WARN, message)}
-     */
-    public static void warn(String loggerName, String message) {
-        Logw.log(loggerName, Level.WARN, message);
-    }
-
-    /**
-     * <p>Logs a message, compiled from message pattern and the arguments, with {@link Level#WARN} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String, Object...) Logw.log(loggerName, Level.WARN, messagePattern, arguments)}
-     */
-    public static void warn(String loggerName, String messagePattern, Object... arguments) {
-        Logw.log(loggerName, Level.WARN, messagePattern, arguments);
-    }
-
-    /**
-     * <p>Logs a message, compiled from message pattern and values from the evaluated argument suppliers, with {@link Level#WARN} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String, Supplier...) Logw.log(loggerName, Level.WARN, messagePattern, argumentSuppliers)}
-     */
-    public static void warn(String loggerName, String messagePattern, Supplier<Object>... argumentSuppliers) {
-        Logw.log(loggerName, Level.WARN, messagePattern, argumentSuppliers);
-    }
-
-    /**
      * <p>Logs a simple log message with {@link Level#ERROR}.</p>
      * Same as: {@link #log(Level, String) Logw.log(Level.ERROR, message)}
      */
     public static void error(String message) {
         Logw.log(Level.ERROR, message);
     }
-
     /**
      * <p>Logs a message, compiled from message pattern and the arguments, with {@link Level#ERROR}.</p>
      * Same as: {@link #log(Level, String, Object...) Logw.log(Level.ERROR, messagePattern, arguments)}
@@ -273,68 +176,11 @@ public class Logw {
     }
 
     /**
-     * <p>Logs a simple log message with {@link Level#ERROR} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String) Logw.log(loggerName, Level.ERROR, message)}
-     */
-    public static void error(String loggerName, String message) {
-        Logw.log(loggerName, Level.ERROR, message);
-    }
-
-    /**
-     * <p>Logs a message, compiled from message pattern and the arguments, with {@link Level#ERROR} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String, Object...) Logw.log(loggerName, Level.ERROR, messagePattern, arguments)}
-     */
-    public static void error(String loggerName, String messagePattern, Object... arguments) {
-        Logw.log(loggerName, Level.ERROR, messagePattern, arguments);
-    }
-
-    /**
-     * <p>Logs a message, compiled from message pattern and values from the evaluated argument suppliers, with {@link Level#ERROR} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String, Supplier...) Logw.log(loggerName, Level.ERROR, messagePattern, argumentSuppliers)}
-     */
-    public static void error(String loggerName, String messagePattern, Supplier<Object>... argumentSuppliers) {
-        Logw.log(loggerName, Level.ERROR, messagePattern, argumentSuppliers);
-    }
-
-    /**
      * <p>Logs a simple log message with the given log level to a logger named with the class of the caller of this method.</p>
-     * Same as: {@link #log(String, Level, String) Logw.log(loggerName, level, message)}
      */
     public static void log(Level level, String message) {
 
         String loggerName = NameDiscoverer.discoverer();
-
-        Logw.log(loggerName, level, message);
-    }
-
-    /**
-     * <p>Logs a message, compiled from message pattern and the arguments, with the given log level to a logger named with the class of the caller of this method.</p>
-     * Same as: {@link #log(String, Level, String, Object...) Logw.log(loggerName, level, messagePattern, arguments)}
-     */
-    public static void log(Level level, String messagePattern, Object... arguments) {
-
-        String loggerName = NameDiscoverer.discoverer();
-
-        Logw.log(loggerName, level, messagePattern, arguments);
-    }
-
-    /**
-     * <p>Logs a message, compiled from message pattern and values from the evaluated argument suppliers, with the given log level to a logger named with the class of the caller of this method.</p>
-     * Same as: {@link #log(Level, String, Supplier[]) Logw.log(loggerName, level, messagePattern, argumentSuppliers)}
-     */
-    public static void log(Level level, String messagePattern, Supplier<Object>... argumentSuppliers) {
-
-        String loggerName = NameDiscoverer.discoverer();
-
-        Logw.log(loggerName, level, messagePattern, argumentSuppliers);
-    }
-
-    /**
-     * TODO
-     * <p>Logs a simple log message with {@link Level#ERROR} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String) Logw.log(loggerName, Level.ERROR, message)}
-     */
-    public static void log(String loggerName, Level level, String message) {
 
         if(!logger.isLoggable(loggerName, level))
             return;
@@ -343,11 +189,11 @@ public class Logw {
     }
 
     /**
-     * TODO
-     * <p>Logs a message, compiled from message pattern and the arguments, with {@link Level#ERROR} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String, Object...) Logw.log(loggerName, Level.ERROR, messagePattern, arguments)}
+     * <p>Logs a message, compiled from message pattern and the arguments, with the given log level to a logger named with the class of the caller of this method.</p>
      */
-    public static void log(String loggerName, Level level, String messagePattern, Object... arguments){
+    public static void log(Level level, String messagePattern, Object... arguments) {
+
+        String loggerName = NameDiscoverer.discoverer();
 
         if(!logger.isLoggable(loggerName, level))
             return;
@@ -356,11 +202,11 @@ public class Logw {
     }
 
     /**
-     * TODO
-     * <p>Logs a message, compiled from message pattern and values from the evaluated argument suppliers, with {@link Level#ERROR} to the logger with the given name.</p>
-     * Same as: {@link #log(String, Level, String, Supplier...) Logw.log(loggerName, Level.ERROR, messagePattern, argumentSuppliers)}
+     * <p>Logs a message, compiled from message pattern and values from the evaluated argument suppliers, with the given log level to a logger named with the class of the caller of this method.</p>
      */
-    public static void log(String loggerName, Level level, String messagePattern, Supplier<Object>... argumentSuppliers){
+    public static void log(Level level, String messagePattern, Supplier<Object>... argumentSuppliers) {
+
+        String loggerName = NameDiscoverer.discoverer();
 
         if(!logger.isLoggable(loggerName, level))
             return;
