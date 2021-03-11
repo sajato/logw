@@ -2,8 +2,14 @@
 
 ![logwlogo][logo]
 
-[![Release](https://img.shields.io/github/release/sajato/logw.svg?label=maven)](https://github.com/sajato/logw)
 ![GitHub license](https://img.shields.io/github/license/sajato/logw.svg?style=flat)
+
+# EOL - this project will not be continued
+All features are now supported by logging libraries like
+[Apache Log4j 2](http://logging.apache.org/log4j/2.x/), 
+so no wrapper is needed anymore.
+
+#
 
 A wrapper for your logging framework that makes logging easier 
 by providing static log methods and makes log guards unnecessary.
