@@ -1,7 +1,0 @@
-language: java
-jdk:
-  - oraclejdk8
-install:
-  - ./gradlew compileJava -PossrhUsername=user -PossrhPassword=secret
-script:
-  - ./gradlew check -PossrhUsername=user -PossrhPassword=secret
