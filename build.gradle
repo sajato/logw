@@ -46,7 +46,7 @@ configure(subprojects - project(':benchmark')) {
     }
 
     signing {
-        sign configurations.archives
+        //sign configurations.archives
     }
 
     uploadArchives {
