@@ -1,7 +1,7 @@
 
 dependencies {
     compile project(':logw-core')
-    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.3'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.3.2'
 }
 
 description 'A wrapper for your logging framework that makes logging easier by providing static log methods and encapsules log guards. This version contains the binding for the Apache Log4j 2 logger.'
